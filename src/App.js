@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+// I placed this 3 here
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Login from "./pages/Login";
+import Dashboard from "./pages/Dashboard";
+import Register from "./pages/Register";
+import JournalEntry from "./pages/JournalEntry";
+
+// 🔐 AUTH CHECK FUNCTION (PUT IT HERE)
+const isAuthenticated = () => {
+  return !!localStorage.getItem("token");
+};
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+
+        // Route to registration page
+        <Route path="/register" element={<Register />} />
+
+        // Route to login page
+        <Route path="/" element={<Login />} />
+        
+        // Route to dashboard, but check if authenticated first
+        <Route path="/dashboard" element={isAuthenticated() ? <Dashboard /> : <Login />} />
+
+        // Route to journal entry page
+        <Route path="/journal-entry" element={<JournalEntry />} />
+
+      </Routes>
+    </BrowserRouter>
   );
 }
 
