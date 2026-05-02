@@ -54,7 +54,7 @@ export default function Register() {
 
         <br /><br />
 
-        <button onClick={() => navigate("/")}>
+        <button onClick={() => navigate("/dashboard")}>
           Back to Login
         </button>
 
