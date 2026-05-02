@@ -1,10 +1,13 @@
 import { useState } from "react";
 import api from "../api/api";
+import { useNavigate } from "react-router-dom";
 
 export default function Register() {
   const [organization, setOrganization] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const navigate = useNavigate();
 
   const register = async () => {
     try {
@@ -16,7 +19,8 @@ export default function Register() {
 
       localStorage.setItem("token", res.data.token);
       alert("Registered successfully!");
-      window.location.href = "/dashboard";
+      
+      navigate("/dashboard");
 
     } catch (err) {
       alert("Registration failed");

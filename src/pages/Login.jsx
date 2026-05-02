@@ -1,10 +1,13 @@
 import { useState } from "react";
 import api from "../api/api";
 import { getRole } from "../utils/auth";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const navigate = useNavigate();
 
   const login = async () => {
     try {
@@ -14,11 +17,10 @@ export default function Login() {
       });
 
       localStorage.setItem("token", res.data.token);
-
       alert("Login successful!");
 
       // redirect (basic)
-      window.location.href = "/dashboard";
+      navigate("/dashboard");
 
     } catch (err) {
       console.error(err);

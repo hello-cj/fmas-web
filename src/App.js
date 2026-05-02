@@ -1,6 +1,6 @@
 // I placed this 3 here
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import ProtectedRoute from "./components/ProtectedRoutes";
+//import ProtectedRoute from "./components/ProtectedRoutes";
 import Dashboard from "./pages/Dashboard";
 import Register from "./pages/Register";
 import JournalEntry from "./pages/JournalEntry";
