@@ -54,7 +54,7 @@ export default function Register() {
 
         <br /><br />
 
-        <button onClick={() => window.location.href = "/"}>
+        <button onClick={() => navigate("/")}>
           Back to Login
         </button>
 

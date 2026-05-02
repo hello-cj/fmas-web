@@ -49,7 +49,7 @@ export default function Login() {
 
       <br /><br />
 
-        <button onClick={() => window.location.href = "/register"}>
+        <button onClick={() => navigate("/register")}>
           Create Account
         </button>
 

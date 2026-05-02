@@ -2,6 +2,7 @@ import axios from "axios";
 
 const api = axios.create({
   baseURL: "https://fmas-api.onrender.com/api",
+  //baseURL: "https://localhost:5001/api",
 });
 
 // Attach JWT automatically
