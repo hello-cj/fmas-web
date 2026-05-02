@@ -1,9 +1,10 @@
 // I placed this 3 here
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Login from "./pages/Login";
+import ProtectedRoute from "./components/ProtectedRoute";
 import Dashboard from "./pages/Dashboard";
 import Register from "./pages/Register";
 import JournalEntry from "./pages/JournalEntry";
+import Login from "./pages/Login";
 
 // 🔐 AUTH CHECK FUNCTION (PUT IT HERE)
 const isAuthenticated = () => {
