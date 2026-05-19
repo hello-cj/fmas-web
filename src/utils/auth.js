@@ -17,7 +17,13 @@ export const getUser = () => {
 
 export const getRole = () => {
   const user = getUser();
-  return user?.role || null;
+  if (!user) return null;
+
+  return (
+    user.role ||
+    user["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"] ||
+    null
+  );
 };
 
 export const isAuthenticated = () => {
